@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from logs.testlogger import logger
+# from logs.testlogger import logger
 
 
 def pytest_addoption(parser):
@@ -12,7 +12,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="class")
 def browser(request):
-    logger.info('Test has started')
+    # logger.info('Test has started')
     browser_name = request.config.getoption("browser_name")
     browser = None
     if browser_name == "chrome":
@@ -28,4 +28,4 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
-    logger.info('Test has finished')
+    # logger.info('Test has finished')
