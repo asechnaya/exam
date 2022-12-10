@@ -1,5 +1,5 @@
 configparser==5.0.2
-pytest==5.1.1
+pytest==6.2.5
 selenium==3.14.0
 Pillow==9.1.1
 Selenium-Screenshot==2.0.0
