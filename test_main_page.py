@@ -1,5 +1,4 @@
 import configparser
-import time
 
 import pytest
 
@@ -11,6 +10,7 @@ config.read('config.ini', encoding='utf-8-sig')
 USER, PASSWORD, FARM = config.get("DEMO", 'Email'), config.get("DEMO", "Password"), config.get("DEMO", "FarmID")
 
 LINK = "https://st.scrdairy.com/"
+COW_GROUP = 15
 
 
 @pytest.mark.smoke
@@ -22,7 +22,8 @@ class TestCowSearch:
         login_page.fill_the_form(USER, PASSWORD, FARM)
         main_page = MainPage(browser, browser.current_url)
         main_page.should_be_main_page()
-        main_page.search_the_cow("15")
+        main_page.search_the_cow(COW_GROUP)
         main_page.should_be_history()
+        main_page.click_on_heat()
         main_page.make_screenshot("screenshots/screen.png")
 
