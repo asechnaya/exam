@@ -1,16 +1,8 @@
-import configparser
-
 import pytest
 
+from pages.global_variables import COW_GROUP, FARM, LINK, PASSWORD, USER
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
-
-config = configparser.ConfigParser()
-config.read('config.ini', encoding='utf-8-sig')
-USER, PASSWORD, FARM = config.get("DEMO", 'Email'), config.get("DEMO", "Password"), config.get("DEMO", "FarmID")
-
-LINK = "https://st.scrdairy.com/"
-COW_GROUP = 15
 
 
 @pytest.mark.smoke
