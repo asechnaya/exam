@@ -1,0 +1,6 @@
+configparser==5.0.2
+pytest==5.1.1
+selenium==3.14.0
+Pillow==9.1.1
+Selenium-Screenshot==2.0.0
+virtualenv==20.13.0
