@@ -16,11 +16,13 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
     browser = None
     if browser_name == "chrome":
+        options = Options()
         print("\nstart chrome browser for test...")
-        browser = webdriver.Chrome()
+        browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test...")
-        browser = webdriver.Firefox()
+        fp = webdriver.FirefoxProfile()
+        browser = webdriver.Firefox(firefox_profile=fp)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser

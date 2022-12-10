@@ -1,6 +1,6 @@
 import configparser
 
-COW_GROUP = 15
+COW_GROUP = "15"
 LINK = "https://st.scrdairy.com/"
 config = configparser.ConfigParser()
 config.read('config.ini', encoding='utf-8-sig')
