@@ -14,6 +14,8 @@ class AfterSearchLocators:
     ANIMAL_NAME = (By.CLASS_NAME, "animal-name")
     TITLE = (By.CSS_SELECTOR, ".animal-events-title")
     ANIMAL_CONTENT = (By.CSS_SELECTOR, ".event-cell-content")
+    HEAT = (By.LINK_TEXT, "Heat")
+    HEAT_DIAGRAM = (By.CSS_SELECTOR, "#chart-container_ChartAreaBorder")
 
 
 class LoginPageLocators:
