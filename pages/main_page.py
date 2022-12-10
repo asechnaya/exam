@@ -1,4 +1,4 @@
-from global_variables import COW_GROUP
+from .global_variables import COW_GROUP
 from .base_page import BasePage
 from .locators import AfterSearchLocators, MainPageLocators
 
