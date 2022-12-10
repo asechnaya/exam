@@ -1,3 +1,4 @@
+from test_main_page import COW_GROUP
 from .base_page import BasePage
 from .locators import AfterSearchLocators, MainPageLocators
 
@@ -20,9 +21,14 @@ class MainPage(BasePage):
 
     def should_be_history(self):
         assert self.is_element_present(*AfterSearchLocators.ANIMAL_NAME), "Animal name is not presented"
-        assert self.get_the_text(*AfterSearchLocators.ANIMAL_NAME) == "15", "Animal name is not presented"
+        assert self.get_the_text(*AfterSearchLocators.ANIMAL_NAME) == COW_GROUP, "Animal name is not presented"
         assert self.is_element_present(*AfterSearchLocators.TITLE), "Title is not presented"
         assert self.is_element_present(*AfterSearchLocators.ANIMAL_CONTENT), "History is not presented"
+        assert self.is_element_present(*AfterSearchLocators.HEAT), "a heat section is not presented"
+
+    def click_on_heat(self):
+        self.click_the_button(*AfterSearchLocators.HEAT), "Heat section is unavailable"
+        self.is_element_present(*AfterSearchLocators.HEAT_DIAGRAM), "Heat graph is not presented"
 
     def search_the_cow(self, key):
         self.click_the_button(*MainPageLocators.SEARCH_BUTTON)
