@@ -36,7 +36,7 @@ class LoginPage(BasePage):
         else:
             logger.error("REMEMBER_CHECKBOX element is not presented!")
 
-    def password_is_invisible(self):
+    def password_should_be_invisible(self):
         if self.is_element_present(*LoginPageLocators.PASSWORD_NOT_VISIBLE):
             assert self.is_element_present(*LoginPageLocators.PASSWORD_VISIBLE)
             logger.warning("PASSWORD is not in invisible mode")

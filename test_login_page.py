@@ -37,7 +37,4 @@ class TestLoginPage:
         page = LoginPage(browser, LINK)
         page.open()
         page.should_be_login_page()
-        page.password_is_invisible()
-        page.fill_the_form(USER, PASSWORD, FARM)
-        main_page = MainPage(browser, browser.current_url)
-        main_page.should_be_main_page()
+        page.password_should_be_invisible()
