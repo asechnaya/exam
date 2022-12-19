@@ -18,10 +18,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.LOGIN_BUTTON), "button input is not presented"
         assert self.is_element_present(*LoginPageLocators.REMEMBER_CHECKBOX), "remember checkbox is not presented"
 
-    def fill_the_form(self, key1, key2, key3):
-        self.fill_the_input(*LoginPageLocators.USER_INPUT, key1)
-        self.fill_the_input(*LoginPageLocators.PASSWORD_INPUT, key2)
-        self.fill_the_input(*LoginPageLocators.FARM_INPUT, key3)
+    def fill_the_form(self, username, password, farm_id):
+        self.fill_the_input(*LoginPageLocators.USER_INPUT, username)
+        self.fill_the_input(*LoginPageLocators.PASSWORD_INPUT, password)
+        self.fill_the_input(*LoginPageLocators.FARM_INPUT, farm_id)
         self.click_the_button(*LoginPageLocators.LOGIN_BUTTON)
         return MainPage(browser=self.browser, url=self.browser.current_url)
 
