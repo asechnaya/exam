@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.global_variables import COW_GROUP, FARM, LINK, PASSWORD, USER
 from pages.login_page import LoginPage
@@ -6,6 +7,9 @@ from pages.main_page import MainPage
 
 
 @pytest.mark.smoke
+@allure.feature("Cow search feature")
+@allure.story("user should be able to search cow and to make a screenshot")
+@allure.title('Negative cases for login page')
 class TestCowSearch:
     def test_user_can_find_a_cow(self, browser):
         login_page = LoginPage(browser, LINK)
